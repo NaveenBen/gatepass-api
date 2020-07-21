@@ -1,0 +1,9 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "naveen786",
+    "database": "gatepassapi",
+    "host": "database-1.c0mbvg8w5nw3.us-east-1.rds.amazonaws.com",
+    "dialect": "postgres"
+  }
+}
