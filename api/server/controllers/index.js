@@ -94,7 +94,7 @@ const deleteUser = async (req,res)=>{
 const getAllUsers = async (req,res)=>{
     try {
 
-        const allUsers = await models.users.findAll();
+        const allUsers = await await sequelize.query("SELECT uid,uname FROM users", { type: QueryTypes.SELECT });
 
         return res.status(200).json({
             allUsers
@@ -124,10 +124,55 @@ const getAllroles = async (req,res)=>{
         
     }
 }
+const getUserById = async (req,res)=>{
+    try {
+        const {Id}=req.params;
+        var id = parseInt(Id);
+        const data = await models.users.findOne({
+            where:{
+                id:id
+            }
+        });
+
+        return res.status(200).json({
+            userinfo:{
+                uid:data['uid'],
+            uname:data['uname'],
+            }
+        });
+
+    } catch (error) {
+
+        return res.status(501).json({
+            error: error.message
+        });
+        
+        
+    }
+}
+const getRoleById = async (req,res)=>{
+    try {
+        const {Id} = req.params;
+        var id = parseInt(Id);
+        const data = await sequelize.query(`SELECT uid,urole FROM users WHERE id=${id}`, { type: QueryTypes.SELECT });
+        return res.status(200).json({
+            data
+        })
+    } catch (error) {
+
+        return res.status(501).json({
+            error: error.message
+        });
+        
+    }
+}
 module.exports = {
     addUser,
     updateUser,
     deleteUser,
     getAllUsers,
-    getAllroles
+    getAllroles,
+    getUserById,
+    getRoleById
+
 }

@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/NaveenBen/gatepass-api/issues"
   },
-  "homepage": "https://github.com/NaveenBen/gatepass-api#readme"
+  "homepage": "https://github.com/NaveenBen/gatepass-api#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "package.json": "^2.0.1",
+    "pg": "^8.3.0",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^6.3.3"
+  }
 }

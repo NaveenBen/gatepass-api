@@ -4,6 +4,6 @@ const server = Express();
 
 server.use(Express.json());
 
-server.use('/cd ..api',router);
+server.use('/api',router);
 
 module.exports = server;
