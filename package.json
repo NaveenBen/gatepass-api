@@ -21,6 +21,6 @@
     "package.json": "^2.0.1",
     "pg": "^8.3.0",
     "pg-hstore": "^2.3.3",
-    "sequelize": "^6.3.3"
+    "sequelize": "^6.29.0"
   }
 }
